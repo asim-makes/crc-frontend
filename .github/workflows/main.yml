@@ -26,7 +26,7 @@ jobs:
             - name: Deploy to Azure Storage
               run: |
                 az storage blob upload-batch \
-                --acount-name "crcresumestorage" \
+                --account-name "crcresumestorage" \
                 --destination "$web" \
                 --source "."
 
