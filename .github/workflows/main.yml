@@ -21,7 +21,7 @@ jobs:
             - name: Log in to Azure
               uses: azure/login@v1
               with:
-                creds: $'{{ secret.AZURE_SECRET }}'
+                creds: $'{{ secrets.AZURE_SECRET }}'
 
             - name: Deploy to Azure Storage
               run: |
