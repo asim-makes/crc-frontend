@@ -27,7 +27,7 @@ jobs:
               run: |
                 az storage blob upload-batch \
                 --account-name "crcresumestorage" \
-                --destination "$web" \
+                --destination '$web' \
                 --source "."
 
             # - name: Purge Azure CDN endpoint
