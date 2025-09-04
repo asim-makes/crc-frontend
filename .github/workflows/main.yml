@@ -24,7 +24,7 @@ jobs:
             - name: Sync files to Azure Blob Storage
               uses: 'azure/CLI@v1'
               with:
-                azcliversion: '2.30.0'
+                azcliversion: '2.40.0'
                 inlineScript: |
                   az storage blob upload-batch \
                     --account-name crcresumestorage \
