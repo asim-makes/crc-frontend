@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     if (visitorCountElement) {
         // Replace with your actual Azure Function URL
-        const apiEndpoint = 'https://<your-function-app>.azurewebsites.net/api/getVisitorCount';
+        const apiEndpoint = '%%AZURE_FUNCTION_URL%%';
 
         fetch(apiEndpoint)
             .then(response => {

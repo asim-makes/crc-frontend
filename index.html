@@ -8,6 +8,8 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/feather-icons" defer></script>
+  <script src="counter.js" defer></script>
 </head>
 
 <body>
@@ -214,21 +216,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      feather.replace();
-
-      let count = 0;
-
-      const visitorCountElement = document.getElementById('visitorCount');
-
-      if (visitorCountElement) {
-        // Increment the count
-        count++;
-        // Update the text content of the span
-        visitorCountElement.textContent = count;
-      }
-    </script>
 </body>
 
 </html>
