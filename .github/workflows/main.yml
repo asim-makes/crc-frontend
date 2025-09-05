@@ -40,6 +40,6 @@ jobs:
                 az afd endpoint purge \
                 --resource-group crc-rg \
                 --profile-name crc-hosting \
-                --endpoint-name asim-crc-resume-f6dveqa5ffbsbshn.z01 \
+                --endpoint-name asim-crc-resume-f6dveqa5ffbsbshn \
                 --domains asim-crc-resume.cloud \
                 --content-paths '/*'
