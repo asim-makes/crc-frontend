@@ -34,17 +34,12 @@ jobs:
                     --overwrite
               env:
                 AZURE_STORAGE_CONNECTION_STRING: $${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-            # - name: Deploy to Azure Storage
-            #   run: |
-            #     az storage blob upload-batch \
-            #     --account-name "crcresumestorage" \
-            #     --destination '$web' \
-            #     --source "."
 
-            # - name: Purge Azure CDN endpoint
-            #   run: |
-            #     az cdn endpoint purge \
-            #     --resource-group " \
-            #     --profile-name "" \
-            #     --name "" \
-            #     --content-paths '/*'
+            - name: Purge Azure CDN endpoint
+              run: |
+                az afd endpoint purge \
+                --resource-group crc-rg \
+                --profile-name crc-hosting \
+                --endpoint-name asim-crc-resume-f6dveqa5ffbsbshn.z01 \
+                --domains asim-crc-resume.cloud
+                --content-paths '/*'
