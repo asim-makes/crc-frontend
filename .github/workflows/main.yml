@@ -41,5 +41,5 @@ jobs:
                 --resource-group crc-rg \
                 --profile-name crc-hosting \
                 --endpoint-name asim-crc-resume-f6dveqa5ffbsbshn.z01 \
-                --domains asim-crc-resume.cloud
+                --domains asim-crc-resume.cloud \
                 --content-paths '/*'
