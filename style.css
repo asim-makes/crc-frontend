@@ -5,9 +5,13 @@
 }
 
 :root {
-  --primary-color: #2563eb;
+  --primary-color: #0891b2;
   --secondary-color: #64748b;
-  --accent-color: #3b82f6;
+  --accent-color: #06b6d4;
+  --tertiary-color: #f59e0b;
+  --gradient-start: #0c4a6e;
+  --gradient-middle: #0891b2;
+  --gradient-end: #f59e0b;
   --text-primary: #1e293b;
   --text-secondary: #475569;
   --text-muted: #64748b;
@@ -24,7 +28,7 @@ html {
 
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fef3c7 100%);
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
@@ -42,7 +46,7 @@ body {
 
 /* Header Section */
 .profile {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
   color: white;
   padding: 4rem 5rem;
   position: relative;
@@ -185,7 +189,7 @@ body {
   left: 0;
   width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
   border-radius: 2px;
 }
 
@@ -208,7 +212,7 @@ body {
 .skill-item:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  background: linear-gradient(135deg, #cffafe 0%, #a7f3d0 100%);
 }
 
 .skill-item span {
@@ -299,7 +303,7 @@ body {
 
 .interest-item:hover {
   transform: translateY(-5px);
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--tertiary-color) 100%);
   color: white;
   box-shadow: var(--shadow-lg);
 }
@@ -329,7 +333,7 @@ body {
 /* Contact & Social */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   padding: 3rem;
@@ -372,6 +376,52 @@ body {
   width: 1.8rem;
   height: 1.8rem;
   color: var(--primary-color);
+}
+
+/* Stats Section */
+.stats-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow);
+  border-left-color: var(--tertiary-color);
+}
+
+.stat-label {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-value.loading {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+}
+
+.stat-value.error {
+  color: #dc2626;
+  font-size: 1.2rem;
 }
 
 /* Responsive Design */
@@ -434,38 +484,4 @@ body {
   .contact-grid {
     padding: 1.5rem;
   }
-}
-
-/* Styling for the new visitor counter section */
-.visitor-counter-section {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background: var(--card-background);
-  /* Use the card background variable */
-  border: 1px solid var(--border-color);
-  /* Use the border color variable */
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  /* Use the standard shadow variable */
-}
-
-/* Style the title of the new section */
-.visitor-counter-section .section-title {
-  margin-bottom: 10px;
-}
-
-/* Style the paragraph text within the section */
-.visitor-counter-section p {
-  font-size: 1.4rem;
-  color: var(--text-secondary);
-}
-
-/* Style the counter number itself to make it stand out */
-#visitorCount {
-  font-size: 1.8em;
-  /* Larger font size relative to the parent font-size */
-  font-weight: bold;
-  color: var(--primary-color);
-  /* Use your primary blue color */
 }

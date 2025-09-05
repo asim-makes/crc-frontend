@@ -1,9 +1,10 @@
 // script.js
 document.addEventListener('DOMContentLoaded', (event) => {
     const visitorCountElement = document.getElementById('visitorCount');
+    const totalVisitorsElement = document.getElementById('totalVisitors');
+    const lastVisitedElement = document.getElementById('lastVisited');
 
-    if (visitorCountElement) {
-        // Replace with your actual Azure Function URL
+    if (visitorCountElement && totalVisitorsElement && lastVisitedElement) {
         const apiEndpoint = '%%AZURE_FUNCTION_URL%%'
 
         fetch(apiEndpoint)
@@ -14,17 +15,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 return response.json();
             })
             .then(data => {
-                // Update the text content with the count from the API
-                visitorCountElement.textContent = data.visitorCount;
+                visitorCountElement.textContent = data.visitorCount || '1';
+                totalVisitorsElement.textContent = data.totalVisitors || data.visitorCount || '1';
+
+                if (data.lastVisited) {
+                    const lastVisited = new Date(data.lastVisited);
+                    lastVisitedElement.textContent = lastVisited.toLocaleDateString();
+                } else {
+                    lastVisitedElement.textContent = new Date().toLocaleDateString();
+                }
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
                 visitorCountElement.textContent = 'Error';
+                visitorCountElement.classList.add('error');
+                totalVisitorsElement.textContent = 'Error';
+                totalVisitorsElement.classList.add('error');
+                lastVisitedElement.textContent = 'Error';
+                lastVisitedElement.classList.add('error');
             });
+    }
 
-        // Replace feather icons after content loads
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
+    if (typeof feather !== 'undefined') {
+        feather.replace();
     }
 });
