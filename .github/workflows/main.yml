@@ -42,4 +42,4 @@ jobs:
                 --profile-name crc-hosting \
                 --endpoint-name asim-crc-resume-f6dveqa5ffbsbshn \
                 --domains asim-crc-resume.cloud \
-                --content-paths '/*'
+                --content-paths '/index.html' '/style.css' '/counter.js' '/*'
