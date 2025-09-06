@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', (event) => {
     const visitorCountElement = document.getElementById('visitorCount');
     const totalVisitorsElement = document.getElementById('totalVisitors');
